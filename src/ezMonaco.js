@@ -52,27 +52,41 @@ class EzMonaco {
 	 * @returns {monaco} Monaco Editor 本體
 	 */
 	get monaco() { return this.#monaco; }
+	/** 取得 Monaco Editor 的 editor Namespace 本體
+	 * @returns {monaco.editor} Monaco Editor 的 editor Namespace 本體
+	 */
+	get editor() { return this.#monaco.editor; }
+	/** 取得 Monaco Editor 的 languages Namespace 本體
+	 * @returns {monaco.languages} Monaco Editor 的 languages Namespace 本體
+	 */
+	get languages() { return this.#monaco.languages; }
+
 	/** 建立 Monaco Editor 編輯器
 	 * @param {HTMLElement} container 放置編輯器的容器
 	 * @param {monaco.editor.IStandaloneEditorConstructionOptions} options 編輯器設定
 	 * @returns {monaco.editor.IStandaloneCodeEditor} 編輯器
 	 */
-	create(container, options) {
-		return this.#monaco.editor.create(container, options);
-	}
+	create(container, options) { return this.#monaco.editor.create(container, options); }
 
 	/** 取得 Monaco Editor 本體
 	 * @returns {monaco} Monaco Editor 本體
 	 */
 	static get monaco() { return monaco; }
+	/** 取得 Monaco Editor 的 editor Namespace 本體
+	 * @returns {monaco.editor} Monaco Editor 的 editor Namespace 本體
+	 */
+	static get editor() { return monaco.editor; }
+	/** 取得 Monaco Editor 的 languages Namespace 本體
+	 * @returns {monaco.languages} Monaco Editor 的 languages Namespace 本體
+	 */
+	static get languages() { return monaco.languages; }
+
 	/** 建立 Monaco Editor 編輯器
 	 * @param {HTMLElement} container 放置編輯器的容器
 	 * @param {monaco.editor.IStandaloneEditorConstructionOptions} options 編輯器設定
 	 * @returns {monaco.editor.IStandaloneCodeEditor} 編輯器
 	 */
-	static create(container, options) {
-		return new EzMonaco().create(container, options);
-	}
+	static create(container, options) { return new EzMonaco().create(container, options); }
 }
 
 export default EzMonaco;
