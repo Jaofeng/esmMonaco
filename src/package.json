@@ -1,0 +1,11 @@
+{
+	"name": "ez-monaco-editor",
+	"scripts": {
+		"build": "node ./build.js"
+	},
+	"dependencies": {
+		"esbuild": "^0.19.5",
+		"monaco-editor": "^0.44.0",
+		"monaco-editor-nls": "^3.1.0"
+	}
+}

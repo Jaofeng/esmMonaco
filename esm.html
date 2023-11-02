@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Monaco Editor Test - Modified from official example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" data-name="vs/editor/editor.main" href="src/node_modules/monaco-editor/dev/vs/editor/editor.main.css" />
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #202020;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: calc(100vw - 2px);
+            height: calc(90vh - 2px);
+            border: 1px solid #606060;
+        }
+
+        #editor {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="editor"></div>
+    </div>
+    <script>
+        var require = { paths: { vs: 'src/node_modules/monaco-editor/dev/vs' }, 'vs/nls': { availableLanguages: { '*': 'zh-tw' } } };
+    </script>
+    <script src="src/node_modules/monaco-editor/dev/vs/loader.js"></script>
+    <script src="src/node_modules/monaco-editor/dev/vs/editor/editor.main.nls.js"></script>
+    <script src="src/node_modules/monaco-editor/dev/vs/editor/editor.main.js"></script>
+    <script>
+        let editor;
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                editor = monaco.editor.create(document.getElementById('editor'), {
+                    theme: 'vs-dark',
+                    value: '// Modified from official example\nfunction x() {\n\tconsole.log("Hello world!");\n}',
+                    language: 'javascript',
+                    automaticLayout: true,
+                });
+            }, 10);
+        });
+    </script>
+</body>
+
+</html>
