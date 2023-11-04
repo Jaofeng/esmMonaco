@@ -5,7 +5,6 @@
 	},
 	"dependencies": {
 		"esbuild": "^0.19.5",
-		"monaco-editor": "^0.44.0",
-		"monaco-editor-nls": "^3.1.0"
+		"monaco-editor": "^0.44.0"
 	}
 }
