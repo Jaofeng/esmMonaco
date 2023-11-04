@@ -9,8 +9,8 @@ const esbuild = require('esbuild');
 const path = require('path');
 const fs = require('fs');
 
-removeDir('../dist/dev', (entry) => /ezMonaco\.js$/.test(entry));
-removeDir('../dist/min', (entry) => /ezMonaco\.min\.js$/.test(entry));
+removeDir('../dist/dev', (entry) => /esmMonaco\.js$/.test(entry));
+removeDir('../dist/min', (entry) => /esmMonaco\.min\.js$/.test(entry));
 removeDir('../dist');
 
 const workerEntryPoints = [
@@ -30,7 +30,7 @@ build({
 });
 
 build({
-	entryPoints: ['ezMonaco.js'],
+	entryPoints: ['esmMonaco.js'],
 	bundle: true,
 	format: 'esm',
 	outdir: path.join(__dirname, '../dist/dev'),
@@ -50,11 +50,11 @@ build({
 });
 
 build({
-	entryPoints: ['ezMonaco.js'],
+	entryPoints: ['esmMonaco.js'],
 	bundle: true,
 	format: 'esm',
 	minify: true,
-	outfile: path.join(__dirname, '../dist/min/ezMonaco.min.js'),
+	outfile: path.join(__dirname, '../dist/min/esmMonaco.min.js'),
 	legalComments: 'none',
 	loader: {
 		'.ttf': 'file'

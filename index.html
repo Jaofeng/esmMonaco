@@ -6,33 +6,25 @@
     <title>Monaco Editor Test - EzMonaco </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="format-detection" content="telephone=no">
+    <!-- <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="./css/index.css">
     <style>
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #202020;
-            box-sizing: border-box;
-        }
-
-        .container {
-            width: calc(100vw - 2px);
-            height: calc(90vh - 2px);
-            border: 1px solid #606060;
-        }
-
-        #editor {
-            height: 100%;
-            width: 100%;
-        }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div id="editor"></div>
-    </div>
+    <section>
+        <div class="container">
+            <div class="bar">
+                <button type="button" id="btnPlay"><i class="fa-solid fa-play"></i></button>
+            </div>
+            <div class="editor">
+                <div id="monaco"></div>
+            </div>
+            <div id="console"></div>
+        </div>
+    </section>
     <script type="module" src="./js/index.js"></script>
 </body>
 
